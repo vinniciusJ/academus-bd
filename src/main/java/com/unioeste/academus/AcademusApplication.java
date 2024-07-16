@@ -21,15 +21,6 @@ public class AcademusApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Console console = System.console();
-		String line = console.readLine();
-
-		System.out.println(line);
-
-		List<Course> courses = this.controller.findAll();
-
-		for (Course course : courses) {
-			System.out.println(course.getName());
-		}
+		controller.findAll();
 	}
 }
