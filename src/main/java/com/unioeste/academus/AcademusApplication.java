@@ -1,19 +1,16 @@
 package com.unioeste.academus;
 
-import com.unioeste.academus.controllers.CourseController;
-import com.unioeste.academus.models.Course;
+import com.unioeste.academus.controllers.AppController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.Console;
-import java.util.List;
-
 @SpringBootApplication
 public class AcademusApplication implements CommandLineRunner {
+
 	@Autowired
-	private CourseController controller;
+	private AppController appController;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AcademusApplication.class, args);
@@ -21,6 +18,6 @@ public class AcademusApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		controller.findAll();
+		appController.startApp();
 	}
 }
