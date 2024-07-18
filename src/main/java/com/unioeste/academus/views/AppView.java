@@ -1,9 +1,9 @@
 package com.unioeste.academus.views;
 
 import com.unioeste.academus.utils.ViewUtils;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class AppView extends ViewUtils {
     public void showMenu(){
         super.showMenu(

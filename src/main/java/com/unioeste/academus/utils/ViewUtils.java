@@ -1,7 +1,6 @@
 package com.unioeste.academus.utils;
 
 import de.vandermeer.asciitable.AsciiTable;
-import lombok.AllArgsConstructor;
 
 import java.io.Console;
 import java.util.function.Function;
@@ -9,7 +8,7 @@ import java.util.function.Function;
 
 public class ViewUtils {
     private final Console console = System.console();
-
+    
     public String input(String label){
         System.out.print(label);
 
@@ -23,7 +22,9 @@ public class ViewUtils {
             return parser.apply(input);
         }
         catch (NumberFormatException e){
-            throw new RuntimeException("Valor inválido");
+            System.out.println("Formato inválido. Por favor, tente novamente.");
+
+            return input(label, parser);
         }
     }
 
@@ -39,4 +40,5 @@ public class ViewUtils {
 
         System.out.println(menu.render());
     }
+
 }

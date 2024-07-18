@@ -1,0 +1,43 @@
+create table federal_unit
+(
+    acronym varchar(2)  not null
+        primary key,
+    name    varchar(25) not null
+);
+
+create table city
+(
+    id                   int auto_increment
+        primary key,
+    name                 varchar(25) not null,
+    federal_unit_acronym int         not null
+        references federal_unit (acronym)
+);
+
+create table public_area_type
+(
+    acronym varchar(25) not null
+        primary key,
+    name    varchar(25) not null
+);
+
+create table public_area
+(
+    id                       int auto_increment
+        primary key,
+    name                     varchar(20) not null,
+    public_area_type_acronym int         null
+        references public_area_type (acronym)
+);
+
+create table address
+(
+    id             int auto_increment
+        primary key,
+    zip_code       varchar(15) null,
+    neighborhood   varchar(20) null,
+    public_area_id int         not null
+        references public_area (id),
+    city_id        int         not null
+        references city (id)
+);
