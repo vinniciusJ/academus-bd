@@ -14,10 +14,4 @@ public class FederalUnit {
     private String acronym;
 
     private String name;
-
-    @OneToMany
-    private List<City> cities;
-
-    @OneToMany
-    private List<Address> addresses;
 }

@@ -41,3 +41,12 @@ create table address
     city_id        int         not null
         references city (id)
 );
+
+create table academic_year
+(
+    year       int  not null
+        primary key,
+    start_date date not null,
+    end_date   date not null
+);
+
