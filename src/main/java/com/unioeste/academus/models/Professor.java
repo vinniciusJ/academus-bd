@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "professor")
+@Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
 public class Professor extends Person {

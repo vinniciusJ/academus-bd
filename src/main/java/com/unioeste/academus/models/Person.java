@@ -1,7 +1,9 @@
 package com.unioeste.academus.models;
 
+import jakarta.persistence.MappedSuperclass;
 import lombok.*;
 
+@MappedSuperclass
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
 public class Person {

@@ -8,15 +8,13 @@ import java.util.List;
 
 @Entity
 @Table(name = "student")
+@Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
 public class Student extends Person {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-
-    @OneToOne
-    private CourseEnrollment courseEnrollment;
 
     @OneToOne
     private Address address;
