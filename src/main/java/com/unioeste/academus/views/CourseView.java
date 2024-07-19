@@ -1,11 +1,8 @@
 package com.unioeste.academus.views;
 
-
-import com.unioeste.academus.models.dtos.CourseDTO;
 import com.unioeste.academus.models.entities.Course;
 import com.unioeste.academus.models.entities.Subject;
 import com.unioeste.academus.utils.ViewUtils;
-import de.vandermeer.asciitable.AsciiTable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
