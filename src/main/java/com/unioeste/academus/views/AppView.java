@@ -13,8 +13,7 @@ public class AppView extends ViewUtils {
                 "[3] - Listar anos letivos",
                 "[4] - Listar turmas",
                 "[5] - Listar professores",
-                "[6] - Listar alunos",
-                "[7] - Realizar matriculas"
+                "[6] - Abrir menu de alunos"
         );
     }
 }

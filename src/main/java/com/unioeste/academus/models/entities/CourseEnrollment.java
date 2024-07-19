@@ -16,7 +16,8 @@ public class CourseEnrollment {
 
     private LocalDate date;
 
-    @OneToOne
+    @OneToOne()
+    @JoinColumn(name = "student_id")
     private Student student;
 
     @ManyToOne

@@ -16,4 +16,7 @@ public class Student extends Person {
 
     @OneToOne
     private Address address;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private CourseEnrollment courseEnrollment;
 }
