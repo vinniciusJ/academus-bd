@@ -3,6 +3,7 @@ package com.unioeste.academus.utils;
 import de.vandermeer.asciitable.AsciiTable;
 
 import java.io.Console;
+import java.util.List;
 import java.util.function.Function;
 
 
@@ -41,4 +42,20 @@ public class ViewUtils {
         System.out.println(menu.render());
     }
 
+    public <T> void showTable(List<String> headers, List<T> data, Function<T, List<String>> rowRenderer) {
+        AsciiTable menu = new AsciiTable();
+
+        menu.addRule();
+        menu.addRow(headers.toArray());
+        menu.addRule();
+
+        for (T item : data) {
+            List<String> row = (List<String>) rowRenderer.apply(item);
+
+            menu.addRow(row.toArray());
+            menu.addRule();
+        }
+
+        System.out.println(menu.render());
+    }
 }

@@ -12,7 +12,7 @@ public class AppController {
     private AppView appView;
 
     @Autowired
-    private CourseController courseController;
+    private AcademicYearController academicYearController;
 
     public void startApp(){
         appView.showMenu();
@@ -21,8 +21,7 @@ public class AppController {
 
         switch (option){
             case 0 -> System.exit(0);
-            case 1 -> courseController.startCourseMenu();
-            case 2 -> System.out.println("Módulo adm");
+            case 3 -> academicYearController.handleAcademicYearList();
             default -> startApp();
         }
 
