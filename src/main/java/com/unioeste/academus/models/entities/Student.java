@@ -1,17 +1,15 @@
-package com.unioeste.academus.models;
+package com.unioeste.academus.models.entities;
 
-import com.unioeste.academus.models.address.Address;
+import com.unioeste.academus.models.entities.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
-@Table(name = "professor")
+@Table(name = "student")
 @Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class Professor extends Person {
+public class Student extends Person {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;

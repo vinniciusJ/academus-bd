@@ -1,58 +1,32 @@
 package com.unioeste.academus.views;
 
 
-import com.unioeste.academus.models.Course;
+import com.unioeste.academus.models.dtos.CourseDTO;
+import com.unioeste.academus.models.entities.Course;
+import com.unioeste.academus.models.entities.Subject;
 import com.unioeste.academus.utils.ViewUtils;
 import de.vandermeer.asciitable.AsciiTable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Component
 public class CourseView extends ViewUtils {
-    public void showCourses(List<Course> courses){
-        AsciiTable coursesTable = new AsciiTable();
+    public void showAll(List<Course> courses){
+        List<String> headers = List.of("ID", "Nome", "Disciplinas");
 
-        coursesTable.addRule();
-        coursesTable.addRow("ID", "Name");
-        coursesTable.addRule();
-
-        for(Course course : courses){
-            coursesTable.addRow(course.getId(), course.getName());
-            coursesTable.addRule();
-        }
-
-        System.out.println(coursesTable.render());
-    }
-
-    public void showCourse(Course course){
-        AsciiTable coursesTable = new AsciiTable();
-
-        coursesTable.addRule();
-        coursesTable.addRow("ID", course.getId());
-        coursesTable.addRule();
-        coursesTable.addRow("Name", course.getName());
-        coursesTable.addRule();
-
-        System.out.println(coursesTable.render());
-    }
-
-    public Course inputCourse(){
-        Course course = new Course();
-
-        course.setName(input("Digite o nome do curso: "));
-
-        return course;
-    }
-
-    public void showMenu() {
-        super.showMenu(
-                "[0] - Voltar",
-                "[1] - Listar todos os cursos",
-                "[2] - Listar curso por ID",
-                "[3] - Cadastrar curso",
-                "[4] - Editar curso",
-                "[5] - Excluir curso"
+        Function<Course, List<String>> renderCourseRow = (course) -> List.of(
+                course.getId().toString(),
+                course.getName(),
+                this.getSubjectsString(course.getSubjects())
         );
+
+        showTable(headers, courses, renderCourseRow);
+    }
+
+    private String getSubjectsString(List<Subject> subjects){
+        return subjects.stream().map(Subject::getName).collect(Collectors.joining(", "));
     }
 }

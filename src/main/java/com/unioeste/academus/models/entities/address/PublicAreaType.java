@@ -1,4 +1,4 @@
-package com.unioeste.academus.models.address;
+package com.unioeste.academus.models.entities.address;
 
 import jakarta.persistence.*;
 import lombok.*;

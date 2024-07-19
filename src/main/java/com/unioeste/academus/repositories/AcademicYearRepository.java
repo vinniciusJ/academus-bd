@@ -1,6 +1,6 @@
 package com.unioeste.academus.repositories;
 
-import com.unioeste.academus.models.AcademicYear;
+import com.unioeste.academus.models.entities.AcademicYear;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

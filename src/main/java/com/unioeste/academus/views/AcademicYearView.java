@@ -1,6 +1,6 @@
 package com.unioeste.academus.views;
 
-import com.unioeste.academus.models.AcademicYear;
+import com.unioeste.academus.models.entities.AcademicYear;
 import com.unioeste.academus.utils.ViewUtils;
 import org.springframework.stereotype.Component;
 

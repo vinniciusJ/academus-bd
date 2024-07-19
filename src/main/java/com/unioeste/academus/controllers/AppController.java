@@ -14,6 +14,9 @@ public class AppController {
     @Autowired
     private AcademicYearController academicYearController;
 
+    @Autowired
+    private CourseController courseController;
+
     public void startApp(){
         appView.showMenu();
 
@@ -21,6 +24,7 @@ public class AppController {
 
         switch (option){
             case 0 -> System.exit(0);
+            case 1 -> courseController.handleCoursesList();
             case 3 -> academicYearController.handleAcademicYearList();
             default -> startApp();
         }

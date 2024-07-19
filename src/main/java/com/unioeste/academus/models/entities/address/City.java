@@ -1,14 +1,13 @@
-package com.unioeste.academus.models.address;
+package com.unioeste.academus.models.entities.address;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Entity
-@Table(name = "public_area")
+@Table(name = "city")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class PublicArea {
+public class City {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
@@ -16,5 +15,5 @@ public class PublicArea {
     private String name;
 
     @ManyToOne
-    private PublicAreaType publicAreaType;
+    private FederalUnit federalUnit;
 }

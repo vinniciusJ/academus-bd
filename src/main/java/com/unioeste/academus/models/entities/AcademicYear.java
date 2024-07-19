@@ -1,6 +1,5 @@
-package com.unioeste.academus.models;
+package com.unioeste.academus.models.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 

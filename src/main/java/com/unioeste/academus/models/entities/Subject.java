@@ -1,4 +1,4 @@
-package com.unioeste.academus.models;
+package com.unioeste.academus.models.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,5 +17,6 @@ public class Subject {
     private String name;
 
     @ManyToOne
+    @JoinColumn(name = "course_id")
     private Course course;
 }
