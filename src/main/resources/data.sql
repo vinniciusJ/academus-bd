@@ -44,6 +44,9 @@ INSERT INTO city (name, federal_unit_acronym) VALUES ('Cascavel', 'PR');
 INSERT INTO city (name, federal_unit_acronym) VALUES ('Curitiba', 'PR');
 INSERT INTO city (name, federal_unit_acronym) VALUES ('São Paulo', 'SP');
 INSERT INTO city (name, federal_unit_acronym) VALUES ('Campinas', 'SP');
+INSERT INTO city (name, federal_unit_acronym) VALUES ('Londrina', 'PR');
+INSERT INTO city (name, federal_unit_acronym) VALUES ('Maringá', 'PR');
+INSERT INTO city (name, federal_unit_acronym) VALUES ('Santos', 'SP');
 
 INSERT INTO public_area_type (acronym, name) VALUES ('R', 'Rua');
 INSERT INTO public_area_type (acronym, name) VALUES ('A', 'Avenida');
@@ -52,20 +55,26 @@ INSERT INTO public_area_type (acronym, name) VALUES ('P', 'Praça');
 INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Rua das Flores', 'R');
 INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Avenida Brasil', 'A');
 INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Praça da Sé', 'P');
+INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Rua XV de Novembro', 'R');
+INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Avenida Paraná', 'A');
+INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Praça Rui Barbosa', 'P');
 
 INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('85819-000', 'Centro', 1, 1);
 INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('80530-100', 'Batel', 2, 2);
 INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('01001-000', 'Sé', 3, 3);
 INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('13040-000', 'Cambuí', 1, 4);
+INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('86010-000', 'Centro', 4, 5);
+INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('87020-000', 'Zona 7', 5, 6);
+INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('11030-000', 'Ponta da Praia', 6, 7);
 
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dr. João Oliveira', 'P001', 'joao.oliveira@example.com', '123456789', 1);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dra. Maria Santos', 'P002', 'maria.santos@example.com', '987654321', 2);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Carlos Almeida', 'P003', 'carlos.almeida@example.com', '192837465', 3);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Ana Lima', 'P004', 'ana.lima@example.com', '564738291', 4);
+INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dr. João Oliveira', '123.456.789-01', 'joao.oliveira@example.com', '123456789', 1);
+INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dra. Maria Santos', '987.654.321-02', 'maria.santos@example.com', '987654321', 2);
+INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Carlos Almeida', '192.837.465-03', 'carlos.almeida@example.com', '192837465', 3);
+INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Ana Lima', '564.738.291-04', 'ana.lima@example.com', '564738291', 4);
 
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('João Silva', '20210001', 'joao.silva@example.com', '123456789', 1);
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Maria Souza', '20210002', 'maria.souza@example.com', '987654321', 2);
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Carlos Pereira', '20210003', 'carlos.pereira@example.com', '192837465', 3);
+INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('João Silva', '123.456.789-10', 'joao.silva@example.com', '123456789', 5);
+INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Maria Souza', '987.654.321-20', 'maria.souza@example.com', '987654321', 6);
+INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Carlos Pereira', '192.837.465-30', 'carlos.pereira@example.com', '192837465', 7);
 
 INSERT INTO course_enrollment (date, student_id, course_id) VALUES ('2021-02-15', 1, 1);
 INSERT INTO course_enrollment (date, student_id, course_id) VALUES ('2022-03-10', 2, 2);

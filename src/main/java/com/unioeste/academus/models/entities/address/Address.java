@@ -22,4 +22,8 @@ public class Address {
 
     @ManyToOne
     private City city;
+
+    public String getFormattedAddress() {
+        return String.format("%s - %s, %s - %s, %s", publicArea.getName(), neighborhood, city.getName(), city.getFederalUnit().getAcronym(), zipCode);
+    }
 }
