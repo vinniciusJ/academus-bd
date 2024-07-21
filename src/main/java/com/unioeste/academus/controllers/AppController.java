@@ -21,6 +21,10 @@ public class AppController {
     private SubjectController subjectController;
 
     @Autowired
+    private SubjectClassController subjectClassController;
+    @Autowired
+    private ProfessorController professorController;
+    @Autowired
     private StudentController studentController;
 
     public void startApp(){
@@ -33,7 +37,9 @@ public class AppController {
             case 1 -> courseController.handleCoursesList();
             case 2 -> subjectController.handleSubjectsList();
             case 3 -> academicYearController.handleAcademicYearList();
-            case 6 -> studentController.startMenu();
+            case 4 -> subjectClassController.handleSubjectClassList();
+            case 5 -> professorController.handleProfessorList();
+            case 6 -> studentController.handleStudentList();
             default -> startApp();
         }
 

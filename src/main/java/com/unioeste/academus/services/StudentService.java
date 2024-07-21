@@ -12,7 +12,7 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public List<Student> getStudents() {
+    public List<Student> getAll() {
         return studentRepository.findAll();
     }
 }
