@@ -1,22 +1,21 @@
-package com.unioeste.academus.models.entities;
+package com.unioeste.academus.models;
 
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "subject")
+@Table(name = "course")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class Subject {
+public class Course {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private Integer series;
-
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
-}
+    @OneToMany(mappedBy = "course")
+    private List<Subject> subjects;
+ }

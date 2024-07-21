@@ -1,8 +1,9 @@
 package com.unioeste.academus.views;
 
-import com.unioeste.academus.models.entities.Course;
-import com.unioeste.academus.models.entities.Subject;
+import com.unioeste.academus.models.Course;
+import com.unioeste.academus.models.Subject;
 import com.unioeste.academus.utils.ViewUtils;
+import de.vandermeer.asciitable.AsciiTable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,6 +22,16 @@ public class CourseView extends ViewUtils {
         );
 
         showTable(headers, courses, renderCourseRow);
+    }
+
+    public void showCourse(Course course){
+        AsciiTable table = new AsciiTable();
+
+        table.addRule();
+        table.addRow("Nome do curso: ", course.getName());
+        table.addRule();
+
+        System.out.println(table.render());
     }
 
     private String getSubjectsString(List<Subject> subjects){

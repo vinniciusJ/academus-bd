@@ -1,6 +1,6 @@
 package com.unioeste.academus.services;
 
-import com.unioeste.academus.models.entities.SubjectClass;
+import com.unioeste.academus.models.SubjectClass;
 import com.unioeste.academus.repositories.SubjectClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

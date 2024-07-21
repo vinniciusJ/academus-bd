@@ -1,6 +1,6 @@
 package com.unioeste.academus.controllers;
 
-import com.unioeste.academus.models.entities.Course;
+import com.unioeste.academus.models.Course;
 import com.unioeste.academus.services.CourseService;
 import com.unioeste.academus.views.CourseView;
 import org.springframework.beans.factory.annotation.Autowired;

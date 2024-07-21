@@ -1,4 +1,4 @@
-package com.unioeste.academus.models.entities;
+package com.unioeste.academus.models;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.*;

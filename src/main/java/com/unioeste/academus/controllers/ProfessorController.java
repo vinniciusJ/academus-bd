@@ -1,6 +1,6 @@
 package com.unioeste.academus.controllers;
 
-import com.unioeste.academus.models.entities.Professor;
+import com.unioeste.academus.models.Professor;
 import com.unioeste.academus.services.ProfessorService;
 import com.unioeste.academus.views.ProfessorView;
 import org.springframework.beans.factory.annotation.Autowired;

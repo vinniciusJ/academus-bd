@@ -1,6 +1,6 @@
 package com.unioeste.academus.controllers;
 
-import com.unioeste.academus.models.entities.Subject;
+import com.unioeste.academus.models.Subject;
 import com.unioeste.academus.services.SubjectService;
 import com.unioeste.academus.views.SubjectView;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.unioeste.academus.services;
 
 import com.unioeste.academus.exceptions.NotFoundException;
-import com.unioeste.academus.models.entities.address.Address;
+import com.unioeste.academus.models.address.Address;
 import com.unioeste.academus.repositories.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

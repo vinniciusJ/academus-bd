@@ -1,13 +1,13 @@
-package com.unioeste.academus.models.entities.address;
+package com.unioeste.academus.models.address;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "public_area_type")
+@Table(name = "federal_unit")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class PublicAreaType {
+public class FederalUnit {
     @Id
     private String acronym;
 

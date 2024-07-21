@@ -1,10 +1,8 @@
 package com.unioeste.academus.repositories;
 
-import com.unioeste.academus.models.entities.Course;
-import com.unioeste.academus.models.entities.Subject;
+import com.unioeste.academus.models.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

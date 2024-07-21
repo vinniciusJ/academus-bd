@@ -39,7 +39,7 @@ public class AppController {
             case 3 -> academicYearController.handleAcademicYearList();
             case 4 -> subjectClassController.handleSubjectClassList();
             case 5 -> professorController.handleProfessorList();
-            case 6 -> studentController.handleStudentList();
+            case 6 -> studentController.startMenu();
             default -> startApp();
         }
 

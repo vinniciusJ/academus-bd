@@ -1,6 +1,6 @@
 package com.unioeste.academus.repositories;
 
-import com.unioeste.academus.models.entities.Subject;
+import com.unioeste.academus.models.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

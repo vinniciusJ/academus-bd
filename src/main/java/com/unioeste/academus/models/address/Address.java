@@ -1,4 +1,4 @@
-package com.unioeste.academus.models.entities.address;
+package com.unioeste.academus.models.address;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,7 +23,8 @@ public class Address {
     @ManyToOne
     private City city;
 
-    public String getFormattedAddress() {
+    @Override
+    public String toString() {
         return String.format("%s - %s, %s - %s, %s", publicArea.getName(), neighborhood, city.getName(), city.getFederalUnit().getAcronym(), zipCode);
     }
 }

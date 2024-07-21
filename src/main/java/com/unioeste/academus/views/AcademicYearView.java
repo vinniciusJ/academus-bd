@@ -1,7 +1,8 @@
 package com.unioeste.academus.views;
 
-import com.unioeste.academus.models.entities.AcademicYear;
+import com.unioeste.academus.models.AcademicYear;
 import com.unioeste.academus.utils.ViewUtils;
+import de.vandermeer.asciitable.AsciiTable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,4 +22,19 @@ public class AcademicYearView extends ViewUtils {
         showTable(headers, academicYears, renderAcademicYearRow);
     }
 
+    public void showCurrentAcademicYear(AcademicYear academicYear){
+        AsciiTable table = new AsciiTable();
+
+        table.addRule();
+        table.addRow("Ano letivo em vigência: ", academicYear.getYear());
+        table.addRule();
+        table.addRow("Data de início: ", academicYear.getStartDate());
+        table.addRule();
+        table.addRow("Data de fim: ", academicYear.getEndDate());
+        table.addRule();
+
+
+        System.out.println("O ano letivo vigente é: ");
+        System.out.println(table.render());
+    }
 }

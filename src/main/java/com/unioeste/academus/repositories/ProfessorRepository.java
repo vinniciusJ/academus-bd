@@ -1,6 +1,6 @@
 package com.unioeste.academus.repositories;
 
-import com.unioeste.academus.models.entities.Professor;
+import com.unioeste.academus.models.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

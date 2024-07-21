@@ -29,7 +29,7 @@ public class ViewUtils {
         }
     }
 
-    public void showMenu(String... options){
+    protected void showMenu(String... options){
         AsciiTable menu = new AsciiTable();
 
         menu.addRule();
@@ -42,7 +42,7 @@ public class ViewUtils {
         System.out.println(menu.render());
     }
 
-    public <T> void showTable(List<String> headers, List<T> data, Function<T, List<String>> rowRenderer) {
+    protected <T> void showTable(List<String> headers, List<T> data, Function<T, List<String>> rowRenderer) {
         AsciiTable menu = new AsciiTable();
 
         menu.addRule();
@@ -57,5 +57,13 @@ public class ViewUtils {
         }
 
         System.out.println(menu.render());
+    }
+
+    public void showMessage(String message){
+        System.out.println(message);
+    }
+
+    public void showError(Exception exception){
+        System.out.println(exception.getMessage());
     }
 }

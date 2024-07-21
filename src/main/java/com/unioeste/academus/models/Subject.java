@@ -1,19 +1,22 @@
-package com.unioeste.academus.models.entities.address;
+package com.unioeste.academus.models;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "city")
+@Table(name = "subject")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class City {
+public class Subject {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    private Integer series;
+
     private String name;
 
     @ManyToOne
-    private FederalUnit federalUnit;
+    @JoinColumn(name = "course_id")
+    private Course course;
 }

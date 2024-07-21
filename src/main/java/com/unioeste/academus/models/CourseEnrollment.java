@@ -1,20 +1,25 @@
-package com.unioeste.academus.models.entities;
+package com.unioeste.academus.models;
 
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "subject_class_enrollment")
+@Table(name = "course_enrollment")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @ToString
-public class SubjectClassEnrollment {
+public class CourseEnrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer number;
 
-    @ManyToOne
+    private LocalDate date;
+
+    @OneToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
     @ManyToOne
-    private SubjectClass subjectClass;
+    private Course course;
 }

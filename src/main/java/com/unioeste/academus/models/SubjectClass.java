@@ -1,4 +1,4 @@
-package com.unioeste.academus.models.entities;
+package com.unioeste.academus.models;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,12 +12,17 @@ public class SubjectClass {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private AcademicYear academicYear;
+    private String name;
 
     @ManyToOne
+    @JoinColumn(name = "subject_id")
     private Subject subject;
 
     @ManyToOne
+    @JoinColumn(name = "professor_id")
     private Professor professor;
+
+    @ManyToOne
+    @JoinColumn(name = "academic_year_year")
+    private AcademicYear academicYear;
 }

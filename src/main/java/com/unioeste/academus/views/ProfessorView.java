@@ -1,6 +1,6 @@
 package com.unioeste.academus.views;
 
-import com.unioeste.academus.models.entities.Professor;
+import com.unioeste.academus.models.Professor;
 import com.unioeste.academus.utils.ViewUtils;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import java.util.function.Function;
 
 @Component
 public class ProfessorView extends ViewUtils {
-    public void showAll(List<Professor> academicYears){
+    public void showAll(List<Professor> professors){
         List<String> headers = List.of("Id", "Nome", "CPF", "Email", "Telefone",  "Endereço");
 
         Function<Professor, List<String>> renderProfessorRows = (professor) -> List.of(
@@ -18,10 +18,10 @@ public class ProfessorView extends ViewUtils {
                 professor.getCode(),
                 professor.getEmail(),
                 professor.getPhoneNumber(),
-                professor.getAddress().getFormattedAddress()
+                professor.getAddress().toString()
         );
 
-        showTable(headers, academicYears, renderProfessorRows);
+        showTable(headers, professors, renderProfessorRows);
     }
 
 }

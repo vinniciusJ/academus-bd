@@ -16,80 +16,90 @@ TRUNCATE TABLE public_area_type;
 
 SET foreign_key_checks = 1;
 
-INSERT INTO course (name) VALUES ('Matemática');
-INSERT INTO course (name) VALUES ('Física');
-INSERT INTO course (name) VALUES ('Ciência da Computação');
-INSERT INTO course (name) VALUES ('Química');
-INSERT INTO course (name) VALUES ('Biologia');
 
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Álgebra', 1);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Geometria', 1);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Mecânica', 2);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Eletricidade e Magnetismo', 2);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Programação', 3);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Estruturas de Dados', 3);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Química Orgânica', 4);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Química Inorgânica', 4);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Genética', 5);
-INSERT INTO subject (series, name, course_id) VALUES (1, 'Microbiologia', 5);
+INSERT INTO federal_unit (acronym, name) VALUES ('PR', 'Paraná'), ('SP', 'São Paulo'), ('RJ', 'Rio de Janeiro');
 
-INSERT INTO academic_year (year, start_date, end_date) VALUES (2021, '2021-02-01', '2021-12-20');
-INSERT INTO academic_year (year, start_date, end_date) VALUES (2022, '2022-02-01', '2022-12-20');
-INSERT INTO academic_year (year, start_date, end_date) VALUES (2023, '2023-02-01', '2023-12-20');
+INSERT INTO city (name, federal_unit_acronym) VALUES
+('Cascavel', 'PR'),
+('Curitiba', 'PR'),
+('São Paulo', 'SP'),
+('Rio de Janeiro', 'RJ');
 
-INSERT INTO federal_unit (acronym, name) VALUES ('PR', 'Paraná');
-INSERT INTO federal_unit (acronym, name) VALUES ('SP', 'São Paulo');
+INSERT INTO public_area_type (acronym, name) VALUES
+('AV', 'Avenida'),
+('R', 'Rua'),
+('TR', 'Travessa');
 
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Cascavel', 'PR');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Curitiba', 'PR');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('São Paulo', 'SP');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Campinas', 'SP');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Londrina', 'PR');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Maringá', 'PR');
-INSERT INTO city (name, federal_unit_acronym) VALUES ('Santos', 'SP');
+INSERT INTO public_area (name, public_area_type_acronym) VALUES
+('Avenida Brasil', 'AV'),
+('Rua Paraná', 'R'),
+('Travessa dos Lagos', 'TR'),
+('Avenida Paulista', 'AV');
 
-INSERT INTO public_area_type (acronym, name) VALUES ('R', 'Rua');
-INSERT INTO public_area_type (acronym, name) VALUES ('A', 'Avenida');
-INSERT INTO public_area_type (acronym, name) VALUES ('P', 'Praça');
+INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES
+('85800-000', 'Centro', 1, 1),
+('85801-000', 'Parque São Paulo', 2, 1),
+('80000-000', 'Batel', 3, 2),
+('01000-000', 'Bela Vista', 4, 3),
+('20000-000', 'Copacabana', 1, 4);
 
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Rua das Flores', 'R');
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Avenida Brasil', 'A');
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Praça da Sé', 'P');
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Rua XV de Novembro', 'R');
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Avenida Paraná', 'A');
-INSERT INTO public_area (name, public_area_type_acronym) VALUES ('Praça Rui Barbosa', 'P');
+INSERT INTO academic_year (year, end_date, start_date) VALUES
+(2024, '2024-02-01', '2024-12-20'),
+(2025, '2025-02-01', '2025-12-20'),
+(2023, '2023-02-01', '2023-12-20');
 
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('85819-000', 'Centro', 1, 1);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('80530-100', 'Batel', 2, 2);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('01001-000', 'Sé', 3, 3);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('13040-000', 'Cambuí', 1, 4);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('86010-000', 'Centro', 4, 5);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('87020-000', 'Zona 7', 5, 6);
-INSERT INTO address (zip_code, neighborhood, public_area_id, city_id) VALUES ('11030-000', 'Ponta da Praia', 6, 7);
+INSERT INTO course (name) VALUES
+('Ciência da Computação'),
+('Engenharia Civil'),
+('Direito');
 
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dr. João Oliveira', '123.456.789-01', 'joao.oliveira@example.com', '123456789', 1);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Dra. Maria Santos', '987.654.321-02', 'maria.santos@example.com', '987654321', 2);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Carlos Almeida', '192.837.465-03', 'carlos.almeida@example.com', '192837465', 3);
-INSERT INTO professor (name, code, email, phone_number, address_id) VALUES ('Prof. Ana Lima', '564.738.291-04', 'ana.lima@example.com', '564738291', 4);
+INSERT INTO subject (name, series, course_id) VALUES
+('Programação Orientada a Objetos', 1, 1),
+('Estruturas de Dados', 1, 1),
+('Cálculo I', 1, 2),
+('Direito Constitucional', 1, 3),
+('Linguagem formal', 1, 1),
+('Computacao 1', 1, 1),
+('Computacao 2', 1, 1);
 
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('João Silva', '123.456.789-10', 'joao.silva@example.com', '123456789', 5);
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Maria Souza', '987.654.321-20', 'maria.souza@example.com', '987654321', 6);
-INSERT INTO student (name, code, email, phone_number, address_id) VALUES ('Carlos Pereira', '192.837.465-30', 'carlos.pereira@example.com', '192837465', 7);
+INSERT INTO professor (name, code, email, address_id) VALUES
+('João Silva', '111.111.111-11', 'joao.silva@example.com', 1),
+('Ana Souza', '222.222.222-22', 'ana.souza@example.com', 2),
+('Carlos Pereira', '333.333.333-33', 'carlos.pereira@example.com', 3),
+('Maria Oliveira', '444.444.444-44', 'maria.oliveira@example.com', 4);
 
-INSERT INTO course_enrollment (date, student_id, course_id) VALUES ('2021-02-15', 1, 1);
-INSERT INTO course_enrollment (date, student_id, course_id) VALUES ('2022-03-10', 2, 2);
-INSERT INTO course_enrollment (date, student_id, course_id) VALUES ('2023-01-25', 3, 3);
+INSERT INTO subject_class (academic_year_year, name, subject_id, professor_id) VALUES
+(2024, 'Pratica', 1, 1),  -- Programação Orientada a Objetos (Ciência da Computação)
+(2024, 'Teorica', 2, 1),  -- Estruturas de Dados (Ciência da Computação)
+(2025, 'Teorica', 3, 2),  -- Cálculo I (Engenharia Civil)
+(2025, 'Teorica', 4, 3),  -- Direito Constitucional (Direito)
+(2024, 'Teorica', 5, 1),  -- Linguagem Formal (Ciencia da computação)
+(2023, 'Teorica', 6, 1),  -- Computacao 1 (Ciencia da computacao)
+(2024, 'Teorica', 7, 1),  -- Computacao 2 (Ciencia da computacao)
+(2024, 'Pratica', 7, 1);  -- Computacao 2 (Ciencia da computação)
 
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2021, 1, 1);
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2021, 2, 1);
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2022, 3, 2);
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2022, 4, 2);
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2023, 5, 3);
-INSERT INTO subject_class (academic_year_year, subject_id, professor_id) VALUES (2023, 6, 3);
+INSERT INTO student (name, code, phone_number, email, address_id) VALUES
+('Maria Souza', '555.555.555-55', '9999-9999', 'maria.souza@example.com', 2),
+('Pedro Costa', '666.666.666-66', '8888-8888', 'pedro.costa@example.com', 3),
+('Julia Martins', '777.777.777-77', '7777-7777', 'julia.martins@example.com',4),
+('Lucas Almeida', '888.888.888-88', '6666-6666', 'lucas.almeida@example.com', 5),
+('Gabriel Obregon', '333.333.333-33', '3333-3333', 'gabriel.obregon@example.com', 1);
 
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (1, 1);
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (1, 2);
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (2, 3);
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (2, 4);
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (3, 5);
-INSERT INTO subject_class_enrollment (student_id, subject_class_id) VALUES (3, 6);
+INSERT INTO course_enrollment (number, date, student_id, course_id) VALUES
+(1, '2024-02-10', 1, 1),  -- Maria Souza / Ciência da Computação
+(2, '2024-02-15', 2, 2),  -- Pedro Costa / Engenharia Civil
+(3, '2025-03-01', 3, 3),  -- Julia Martins / Direito
+(4, '2025-03-05', 4, 1),  -- Lucas Almeida / Ciência da Computação
+(5, '2024-04-09', 5, 1);  -- Gabriel Obregon / Ciência da computação
+
+UPDATE student SET course_enrollment_id = 1 WHERE id = 1;
+UPDATE student SET course_enrollment_id = 2 WHERE id = 2;
+UPDATE student SET course_enrollment_id = 3 WHERE id = 3;
+UPDATE student SET course_enrollment_id = 4 WHERE id = 4;
+UPDATE student SET course_enrollment_id = 5 WHERE id = 5;
+
+INSERT INTO subject_class_enrollment (number, subject_class_id, student_id) VALUES
+(1, 1, 1),  -- Maria Souza / Programação Orientada a Objetos
+(2, 2, 1),  -- Maria Souza / Estruturas de Dados
+(3, 3, 2),  -- Pedro Costa / Cálculo I
+(4, 4, 3);  -- Julia Martins / Direito Constitucional
